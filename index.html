@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.0/dist/aframe-extras.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#ECECEC"></a-sky>
+      <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
+ 
+
+      <a-assets>        
+        <a-asset-items id="desktop" src="Models/Desktop/scene.gltf"></a-asset-items>
+        <a-asset-items id="apartment"  src="Models/Apartment/scene.gltf"></a-asset-items>
+        <a-asset-items id="bed"  src="Models/Bed/scene.gltf"></a-asset-items>
+        <a-asset-items id="sofa"  src="Models/Sofa/scene.gltf"></a-asset-items>
+        <a-asset-items id="TV"  src="Models/Living Room TV/scene.gltf"></a-asset-items>
+        <a-asset-items id="BedroomTV"  src="Models/BedroomTV/scene.gltf"></a-asset-items>
+        <a-asset-items id="BedroomDesk"  src="Models/BedroomDesk/scene.gltf"></a-asset-items>
+        <a-asset-items id="Xbox"  src="Models/Xbox/scene.gltf"></a-asset-items>
+        <a-asset-items id="GamingChair"  src="Models/GamingChair/scene.gltf"></a-asset-items>
+
+      </a-assets>
+
+      <a-entity id="update1" scale="1 1 1" position="2.77931 -0.03359 0" gltf-model="#desktop"></a-entity>
+      <a-entity id="update2" scale="1.45 1.45 1.45" position="-0.73928 0.01707 0" gltf-model="#apartment"></a-entity>
+      <a-entity id="update3" rotation="176.40224596487786 0.5563420190720294 -179.2773481808443" scale="0.035 0.035 0.035" position="4.73131 0.08593 1.93835" gltf-model="#bed"></a-entity>
+      <a-entity id="update4" position="-4.39669 -0.00891 -4.86496"  gltf-model="#sofa" scale="0.035 0.035 0.035"></a-entity>
+      <a-entity id="update5" rotation="15.091708323745886 90.87683588569988 1.6839229598894894" position="-7.54635 2.62159 -4.12496" gltf-model="#TV" scale="0.045 0.045 0.045"></a-entity>
+      <a-entity id="update6" position="4.18587 1.73413 -5.97007" gltf-model="#BedroomTV" ></a-entity>
+      <a-entity id="update7" scale="4 2 2" position="4.33188 0 -6.11283" gltf-model="#BedroomDesk" ></a-entity>
+      <a-entity id="update8" scale=".001 .001 .001" position="5.48517 1.03338 -6.11283" gltf-model="#Xbox" ></a-entity>
+      <a-entity id="update9" rotation="0 -85.86517405169056 0" position="4.49314 0.46853 -2.66486" scale="0.0025 0.002 0.002" gltf-model="#GamingChair" ></a-entity>
+
+      
+      <a-entity camera look-controls wasd-controls="acceleration:45" position="0 1.6 0"></a-entity>
+
+
+
+    </a-scene>
+    
+  </body>
+</html>
