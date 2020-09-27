@@ -3,6 +3,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.0/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="js/sky.js"></script>
     <script src="js/sunSetter.js"></script>
 
@@ -12,21 +13,26 @@
 
    
   
-    <a-scene physics="gravity: 0">
+    <a-scene physics="debug: true">
+
       <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="-15-153 2.228 1.273" rotation="-1.476 270 0"  camera="userHeight: 0">
-        <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+      <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
             radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat"
                   position="0 0 -0.75"></a-entity>
                 </a-entity>
+
       <a-sky color="#ECECEC"></a-sky>
+      <a-plane static-body position="0 -0.05455 0" rotation="-90.18011920682079 0 0" scale="60 60 60"></a-plane>
+
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
-      <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
+    <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
     <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
 
 
-<a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
-      height="21" depth="1" position="1.55038 1.77466 -2.29498" rotation="0 -85.23090977248074 0" scale="0.015 0.015 0.015">
+    <a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
+      height="21" depth="1" position="1.55038 1.77466 -2.29498" rotation="0 -85.23090977248074 0" scale="0.015 0.015 0.015" 
+      static-body class="intersectable">
     </a-box>
 
       <!--Function levels of light when clicked -->
