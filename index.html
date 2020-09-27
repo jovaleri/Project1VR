@@ -9,50 +9,7 @@
   </head>
   <body>
 
-    <script>
-      function setLight(){
-          var light = document.querySelector('#LightSwitch');
-          var current_color = light.getAttribute('color');
-          if (current_color == 'grey'){
-              light.setAttribute('color', 'white');
-          }
-          else{
-              light.setAttribute('color', 'grey');
-          }
-      }
-    </script>
-    
-    <script>
-      AFRAME.registerComponent('sun-position-setter', {
-          init: function () {
-            var skyEl = this.el;
-            var orbitEl = this.el.sceneEl.querySelector('#Sun');
-            orbitEl.addEventListener('componentchanged', function changeSun (evt) {
-                var sunPosition;
-                var phi;
-                var theta;
-
-                if (evt.detail.name !== 'rotation') { return; }
-
-                sunPosition = orbitEl.getAttribute('rotation');
-
-                if(sunPosition === null) { return; }
-
-                theta = Math.PI * (- 0.5);
-                phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
-                //Debugging position
-                //console.log(Math.cos(phi), Math.sin(phi) * Math.sin(theta))
-                skyEl.setAttribute('material', 'sunPosition', {
-                    x: Math.cos(phi),
-                    y: Math.sin(phi) * Math.sin(theta),
-                    z: -1
-                });
-            });
-        }
-    });
-
-  </script>
-
+   
   
     <a-scene physics="gravity: 0">
       <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="-15-153 2.228 1.273" rotation="-1.476 270 0"  camera="userHeight: 0">
@@ -62,6 +19,54 @@
                 </a-entity>
       <a-sky color="#ECECEC"></a-sky>
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
+
+
+      <script>
+        function setLight(){
+            var light = document.querySelector('#LightSwitch');
+            var current_color = light.getAttribute('color');
+            if (current_color == 'grey'){
+                light.setAttribute('color', 'white');
+            }
+            else{
+                light.setAttribute('color', 'grey');
+            }
+        }
+      </script>
+      
+      <script>
+        AFRAME.registerComponent('sun-position-setter', {
+            init: function () {
+              var skyEl = this.el;
+              var orbitEl = this.el.sceneEl.querySelector('#Sun');
+              orbitEl.addEventListener('componentchanged', function changeSun (evt) {
+                  var sunPosition;
+                  var phi;
+                  var theta;
+  
+                  if (evt.detail.name !== 'rotation') { return; }
+  
+                  sunPosition = orbitEl.getAttribute('rotation');
+  
+                  if(sunPosition === null) { return; }
+  
+                  theta = Math.PI * (- 0.5);
+                  phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
+                  //Debugging position
+                  //console.log(Math.cos(phi), Math.sin(phi) * Math.sin(theta))
+                  skyEl.setAttribute('material', 'sunPosition', {
+                      x: Math.cos(phi),
+                      y: Math.sin(phi) * Math.sin(theta),
+                      z: -1
+                  });
+              });
+          }
+      });
+  
+    </script>
+  
+
+
 
       <a-assets>        
         <a-asset-items id="desktop" src="Models/Desktop/scene.gltf"></a-asset-items>
