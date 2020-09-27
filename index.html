@@ -20,7 +20,7 @@
     <a-scene>
       <a-sky color="#ECECEC"></a-sky>
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
- 
+      <a-box static-body></a-box>
 
       <a-assets>        
         <a-asset-items id="desktop" src="Models/Desktop/scene.gltf"></a-asset-items>
@@ -41,6 +41,8 @@
         <a-asset-items id="Kitchen"  src="Models/Kitchen/scene.gltf"></a-asset-items>
         <a-asset-items id="Fridge"  src="Models/Fridge/scene.gltf"></a-asset-items>
         <a-asset-items id="LightSwitch"  src="Models/LightSwitch/scene.gltf"></a-asset-items>
+        <a-asset-items id="Shower"  src="Models/Shower/scene.gltf"></a-asset-items>
+        <a-asset-items id="Toilet"  src="Models/Toilet/scene.gltf"></a-asset-items>
 
       </a-assets>
 
@@ -55,15 +57,17 @@
       <a-entity id="update9" rotation="0 -85.86517405169056 0" position="3.20751 0.46853 -0.14475" scale="0.0025 0.002 0.002" gltf-model="#GamingChair" ></a-entity>
       <a-entity id="update10" position="2.86102 0 3.83564" scale="1 1 1" gltf-model="#ToiletPaperSafe" ></a-entity>
       <a-entity id="update11" position="3.88033 0.09921 3.75776" scale="0.15 0.15 0.15" gltf-model="#ToiletPaper" ></a-entity>
-      <a-entity id="update12" scale="10 10 10" position="0 3.89832 -0.96231" gltf-model="#Roof" ></a-entity>
+      <a-entity id="update12" scale="10 10 10" position="0 3.89832 -0.77565" gltf-model="#Roof" ></a-entity>
       <a-entity id="update13" scale="0.003 0.0025 0.003" position="2.25987 0.71204 -1.25529" gltf-model="#Computer"></a-entity>
       <a-entity id="update14" rotation="179.99927500270914 -89.85525213698162 -179.9998479605043" scale="0.01 0.015 0.015" position="0.50221 1.56618 -7.1103" gltf-model="#FrontDoor"></a-entity>
       <a-entity id="update15" rotation="0 89.99333496560814 0" scale="0.01 0.015 0.015" position="-0.03755 1.52566 7.19824" gltf-model="#BackDoor"></a-entity>
       <a-entity id="update16" scale="1.25 1.25 1.25" rotation="-179.9998479605043 -0.4365938398896873 -179.9998479605043" position="-7.6466 -0.0891 6.7431" gltf-model="#Kitchen"></a-entity>
       <a-entity id="update17" position="-7.56381 0 2.31568" scale="0.02 0.02 0.02" gltf-model="#Fridge"></a-entity>
       <a-entity id="update19" rotation="-0.007448451336700701 -85.70073516448801 0.007448451336700701" position="1.56101 1.76885 -2.30296" scale="0.0005 0.0005 0.0005" gltf-model="#LightSwitch"></a-entity>
+      <a-entity id="update20" scale="1.86759 1.73669 1.5" rotation="0 -89.89134847807486 0" position="5.6324 0.06715 4.74053" gltf-model="#Shower"></a-entity>
+      <a-entity id="update21" rotation="0 -86.62548904582917 0" scale="0.6 0.6 0.6" position="3.42469 0.53269 6.58455" gltf-model="#Toilet"></a-entity>
 
-      <a-entity camera look-controls wasd-controls="acceleration:5" position="0 1.6 0"></a-entity>
+      <a-entity camera look-controls wasd-controls="acceleration:65" position="0 1.6 0"></a-entity>
 
     
 
