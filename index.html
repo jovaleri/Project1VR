@@ -4,6 +4,7 @@
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.3.0/dist/aframe-extras.min.js"></script>
     <script src="js/sky.js"></script>
+    <script src="js/sunSetter.js"></script>
 
     
   </head>
@@ -20,17 +21,23 @@
       <a-sky color="#ECECEC"></a-sky>
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
-      <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
-      <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
+      <a-entity id="sky" geometry="primitive: sphere; radius: 200;" material="shader: sky; side: back"
+      sun-position-setter>
+<!-- Sun Position and Duration and Repetition values for animation -->
+<a-entity id="orbit">
+    <a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="50000" repeat="1000"></a-animation>
+</a-entity>
+</a-entity>
 
-      <a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
+<a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
       height="21" depth="1" position="1.55038 1.77466 -2.29498" rotation="0 -85.23090977248074 0" scale="0.015 0.015 0.015" static-body
-      class="intersectable"></a-box>
+      class="intersectable">
+    </a-box>
 
       <!--Function levels of light when clicked -->
       <script>
           function fourLevelLight() {
-              var light = document.querySelector('#LightSwitch');
+              var light = document.querySelector('#light');
               var current_intensity = light.getAttribute('intensity');
   
               if (current_intensity == 1)
