@@ -20,51 +20,30 @@
       <a-sky color="#ECECEC"></a-sky>
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
+      <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
+      <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
 
+      <a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
+      height="21" depth="1" position="1.55038 1.77466 -2.29498" rotation="0 -85.23090977248074 0" scale="0.015 0.015 0.015" static-body
+      class="intersectable"></a-box>
+
+      <!--Function levels of light when clicked -->
       <script>
-        function setLight(){
-            var light = document.querySelector('#LightSwitch');
-            var current_color = light.getAttribute('color');
-            if (current_color == 'grey'){
-                light.setAttribute('color', 'white');
-            }
-            else{
-                light.setAttribute('color', 'grey');
-            }
-        }
-      </script>
-      
-      <script>
-        AFRAME.registerComponent('sun-position-setter', {
-            init: function () {
-              var skyEl = this.el;
-              var orbitEl = this.el.sceneEl.querySelector('#Sun');
-              orbitEl.addEventListener('componentchanged', function changeSun (evt) {
-                  var sunPosition;
-                  var phi;
-                  var theta;
+          function fourLevelLight() {
+              var light = document.querySelector('#LightSwitch');
+              var current_intensity = light.getAttribute('intensity');
   
-                  if (evt.detail.name !== 'rotation') { return; }
-  
-                  sunPosition = orbitEl.getAttribute('rotation');
-  
-                  if(sunPosition === null) { return; }
-  
-                  theta = Math.PI * (- 0.5);
-                  phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
-                  //Debugging position
-                  //console.log(Math.cos(phi), Math.sin(phi) * Math.sin(theta))
-                  skyEl.setAttribute('material', 'sunPosition', {
-                      x: Math.cos(phi),
-                      y: Math.sin(phi) * Math.sin(theta),
-                      z: -1
-                  });
-              });
+              if (current_intensity == 1)
+                  light.setAttribute('intensity', .5);
+              else if (current_intensity == .5)
+                  light.setAttribute('intensity', 0);
+              else if (current_intensity == 0)
+                  light.setAttribute('intensity', 2);
+              else
+                  light.setAttribute('intensity', 1);
           }
-      });
   
-    </script>
-  
+        </script>
 
 
 
@@ -119,7 +98,7 @@
       <a-entity id="update24" position="-6.06747 0.05414 -15.37116" scale="0.01 0.01 0.01" gltf-model="#BodyBag"></a-entity>
 
 
-    
+
 
     </a-scene>
     
