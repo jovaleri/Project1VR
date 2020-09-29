@@ -10,15 +10,34 @@
     <script>
       registerAframeClickDragComponent(window.AFRAME);
     </script>  
+    <script>
+
+      AFRAME.registerComponent('audiohandler', {
+        init:function() {
+           let playing = false;
+           let audio = document.querySelector("#audio");
+           this.el.addEventListener('click', () => {
+                if(!playing) {
+                    audio.play();
+                 } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                 }
+                 playing = !playing;
+           });
+        }
+      })
+      
+      </script> 
     </head>
   <body>
 
    
   
-    <a-scene physics="debug: true">
+    <a-scene physics="debug: false">
 
       
-      <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="0 4 0" rotation="-1.476 270 0"  camera="userHeight: 0">
+      <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="0 3 0" rotation="-1.476 270 0"  camera="userHeight: 0">
         <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
             radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat"
                   position="0 0 -0.75"></a-entity>
@@ -81,7 +100,7 @@
         <a-asset-items id="DesktopNoCovid" src="Models/DesktopNoCovid/scene.gltf"></a-asset-items>
         <a-asset-items id="Speakers" src="Models/Speakers/scene.gltf"></a-asset-items>
         <a-asset-items id="SpeakersNoCovid" src="Models/SpeakersNoCovid/scene.gltf"></a-asset-items>
-
+        <audio id="audio" crossorigin="anonymous" src="Audio\noncovid.mp3"></audio>
       </a-assets>
 
 
@@ -167,7 +186,8 @@
         <a-entity id="update25" position="2.69426 0.01144 0" gltf-model="#DesktopNoCovid"></a-entity>
         <a-entity id="update29" rotation="175.99315409915445 -66.12563209384344 -162.20435180153606" position="-4.44357 0.00212 -11.32391" scale="0.006 0.006 0.006" gltf-model="#Motorcycle"></a-entity>
 
-        
+        <a-box position = "0  0 -2" audiohandler></a-box>
+
 
   </a-box>
 
@@ -206,25 +226,7 @@
 
 </script>
 
-<script>
 
-AFRAME.registerComponent('audiohandler', {
-  init:function() {
-     let playing = false;
-     let audio = document.querySelector("#audio");
-     this.el.addEventListener('click', () => {
-          if(!playing) {
-              audio.play();
-           } else {
-              audio.pause();
-              audio.currentTime = 0;
-           }
-           playing = !playing;
-     });
-  }
-})
-
-</script> 
 
     </a-scene>
     
