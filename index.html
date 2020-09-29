@@ -6,23 +6,30 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="js/sky.js"></script>
     <script src="js/sunSetter.js"></script>
-
-    
-  </head>
+    <script src="https://unpkg.com/aframe-click-drag-component"></script>
+    <script>
+      registerAframeClickDragComponent(window.AFRAME);
+    </script>  
+    </head>
   <body>
 
    
   
     <a-scene physics="debug: true">
 
-      <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="-15-153 2.228 1.273" rotation="-1.476 270 0"  camera="userHeight: 0">
-      <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+      
+      <a-entity camera look-controls wasd-controls="acceleration:65" universal-controls kinematic-body position="0 4 0" rotation="-1.476 270 0"  camera="userHeight: 0">
+        <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
             radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat"
                   position="0 0 -0.75"></a-entity>
                 </a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
       <a-plane static-body position="0 -0.05455 0" rotation="-90.18011920682079 0 0" scale="60 60 60"></a-plane>
+      <a-box   position="-0.88156 0.32195 -7.30361" rotation="0 179.5334603152678 0" scale="15.0302 1.10375 0.10262" static-body></a-box>
+      <a-box   position="-7.79705 0.32195 -0.30021" rotation="0 90.00307524812537 0" scale= "14.64794 1.10375 0.10262" static-body></a-box>
+      <a-box   position="6.431 0.32195 -0.02086" rotation="0 -89.99734567017407 0" scale="14.5396 1.10375 0.10262" static-body></a-box>
+      <a-box   position= "-0.70328 0.32195 7.3342" rotation:= "0 179.95573021027923 0" scale= "14.64794 1.10375 0.10262" static-body></a-box>
 
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
@@ -35,23 +42,7 @@
       static-body class="intersectable">
     </a-box>
 
-      <!--Function levels of light when clicked -->
-      <script>
-          function fourLevelLight() {
-              var light = document.querySelector('#light');
-              var current_intensity = light.getAttribute('intensity');
-  
-              if (current_intensity == 1)
-                  light.setAttribute('intensity', .5);
-              else if (current_intensity == .5)
-                  light.setAttribute('intensity', 0);
-              else if (current_intensity == 0)
-                  light.setAttribute('intensity', 2);
-              else
-                  light.setAttribute('intensity', 1);
-          }
-  
-        </script>
+
 
 
 
@@ -78,35 +69,162 @@
         <a-asset-items id="Toilet"  src="Models/Toilet/scene.gltf"></a-asset-items>
         <a-asset-items id="Sun"  src="Models/Sun/scene.gltf"></a-asset-items>
         <a-asset-items id="BodyBag"  src="Models/BodyBag/scene.gltf"></a-asset-items>
+        <a-asset-items id="NoCovidTV"  src="Models/LivingRoomNoCovid/scene.gltf"></a-asset-items>
+        <a-asset-items id="NoCovidBedroomTV"  src="Models/BedroomTVNoCovid/scene.gltf"></a-asset-items>
+        <a-asset-items id="Food"  src="Models/Food/scene.gltf"></a-asset-items>
+        <a-asset-items id="Food2"  src="Models/Food2/scene.gltf"></a-asset-items>
+        <a-asset-items id="Guitar"  src="Models/Guitar/scene.gltf"></a-asset-items>
+        <a-asset-items id="Motorcycle"  src="Models/Motorcycle/scene.gltf"></a-asset-items>
+        <a-asset-items id="FaceMask"  src="Models/FaceMask/scene.gltf"></a-asset-items>
+        <a-asset-items id="Cat"  src="Models/Cat/scene.gltf"></a-asset-items>
+        <a-asset-items id="Controller"  src="Models/Controller/scene.gltf"></a-asset-items>
+        <a-asset-items id="DesktopNoCovid" src="Models/DesktopNoCovid/scene.gltf"></a-asset-items>
+        <a-asset-items id="Speakers" src="Models/Speakers/scene.gltf"></a-asset-items>
+        <a-asset-items id="SpeakersNoCovid" src="Models/SpeakersNoCovid/scene.gltf"></a-asset-items>
 
       </a-assets>
 
-      <a-entity id="update1" scale="1 1 1" position="2.77931 -0.03359 0" gltf-model="#desktop"></a-entity>
-      <a-entity id="update2" scale="1.45 1.45 1.45" position="-0.73928 0.01707 0" gltf-model="#apartment"></a-entity>
-      <a-entity id="update3" rotation="176.40224596487786 0.5563420190720294 -179.2773481808443" scale="0.035 0.035 0.035" position="4.73131 0.08593 1.93835" gltf-model="#bed"></a-entity>
-      <a-entity id="update4" position="-4.39669 -0.00891 -4.86496"  gltf-model="#sofa" scale="0.035 0.035 0.035"></a-entity>
-      <a-entity id="update5" rotation="15.091708323745886 90.87683588569988 1.6839229598894894" position="-7.54635 2.62159 -4.12496" gltf-model="#TV" scale="0.045 0.045 0.045"></a-entity>
-      <a-entity id="update6" position="4.18587 1.73413 -5.97007" gltf-model="#BedroomTV" ></a-entity>
-      <a-entity id="update7" scale="4 2 2" position="4.33188 0 -6.11283" gltf-model="#BedroomDesk" ></a-entity>
-      <a-entity id="update8" scale=".001 .001 .001" position="5.48517 1.03338 -6.11283" gltf-model="#Xbox" ></a-entity>
-      <a-entity id="update9" rotation="0 -85.86517405169056 0" position="3.20751 0.46853 -0.14475" scale="0.0025 0.002 0.002" gltf-model="#GamingChair" ></a-entity>
-      <a-entity id="update10" position="2.86102 0 3.83564" scale="1 1 1" gltf-model="#ToiletPaperSafe" ></a-entity>
-      <a-entity id="update11" position="3.88033 0.09921 3.75776" scale="0.15 0.15 0.15" gltf-model="#ToiletPaper" ></a-entity>
-      <a-entity id="update12" scale="7.52367 10 8.38195" position="-0.66783 3.89832 0.11353" gltf-model="#Roof" ></a-entity>
-      <a-entity id="update13" scale="0.003 0.0025 0.003" position="2.25987 0.71204 -1.25529" gltf-model="#Computer"></a-entity>
-      <a-entity id="update14" rotation="179.99927500270914 -89.85525213698162 -179.9998479605043" scale="0.01 0.015 0.015" position="0.50221 1.56618 -7.1103" gltf-model="#FrontDoor"></a-entity>
-      <a-entity id="update15" rotation="0 89.99333496560814 0" scale="0.01 0.015 0.015" position="-0.03755 1.52566 7.19824" gltf-model="#BackDoor"></a-entity>
-      <a-entity id="update16" scale="1.25 1.25 1.25" rotation="-179.9998479605043 -0.4365938398896873 -179.9998479605043" position="-7.6466 -0.0891 6.7431" gltf-model="#Kitchen"></a-entity>
-      <a-entity id="update17" position="-7.21001 0 2.31568" scale="0.02 0.02 0.02" gltf-model="#Fridge"></a-entity>
-      <a-entity id="update19" rotation="-0.007448451336700701 -85.70073516448801 0.007448451336700701" position="1.56101 1.76885 -2.30296" scale="0.0005 0.0005 0.0005" gltf-model="#LightSwitch"></a-entity>
-      <a-entity id="update20" scale="1.86759 1.73669 1.5" rotation="0 -89.89134847807486 0" position="5.6324 0.06715 4.74053" gltf-model="#Shower"></a-entity>
-      <a-entity id="update21" rotation="0 -86.62548904582917 0" scale="0.6 0.6 0.6" position="3.42469 0.53269 6.58455" gltf-model="#Toilet"></a-entity>
-      <a-entity id="update22" position="33.76766 35.80319 121.39801" scale="0.01 0.01 0.01" gltf-model="#Sun"></a-entity>
-      <a-entity id="update23" position="4.94191 0.09096 -16.98409" scale="0.01 0.01 0.01" gltf-model="#BodyBag"></a-entity>
-      <a-entity id="update24" position="-6.06747 0.05414 -15.37116" scale="0.01 0.01 0.01" gltf-model="#BodyBag"></a-entity>
+
+
+        <a-entity id="Covid">
+
+          <a-box color="red" position= "1.58952 1.44104 0.58593"
+          scale= "0.0267 0.12191 0.08593" onclick="NonCovid()" static-body class="intersectable"> </a-box>
+          <a-light id="ambient1" type="ambient" color="#4f6487" >
+          <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+          </a-light>
+
+        <a-entity id="update1" position="2.69426 0.01144 0" gltf-model="#desktop"></a-entity>
+        <a-entity id="update2" scale="1.45 1.45 1.45" position="-0.73928 0.01707 0" gltf-model="#apartment"></a-entity>
+        <a-entity id="update3" rotation="176.40224596487786 0.5563420190720294 -179.2773481808443" scale="0.035 0.035 0.035" position="4.73131 0.08593 1.93835" gltf-model="#bed"></a-entity>
+        <a-entity id="update4" rotation="0 0 0.06990085100596043" position="-4.39669 -0.00891 -4.86496"  gltf-model="#sofa" scale="0.035 0.035 0.035"></a-entity>
+        <a-entity id="update5" rotation="15.091708323745886 90.87683588569988 1.6839229598894894" position="-7.54635 2.62159 -4.12496" gltf-model="#TV" scale="0.045 0.045 0.045"></a-entity>
+        <a-entity id="update6" position="4.18587 1.73413 -5.97007" gltf-model="#BedroomTV" ></a-entity>
+        <a-entity id="update7" scale="4 2 2" position="4.33188 0 -6.11283" gltf-model="#BedroomDesk" ></a-entity>
+        <a-entity id="update8" scale=".001 .001 .001" position="5.48517 1.03338 -6.11283" gltf-model="#Xbox" ></a-entity>
+        <a-entity id="update9" rotation="0 -85.86517405169056 0" position="3.34147 -0.05246 -0.73293" scale="0.0025 0.002 0.002" gltf-model="#GamingChair" ></a-entity>
+        <a-entity id="update10" position="2.86102 0 3.83564" scale="1 1 1" gltf-model="#ToiletPaperSafe" ></a-entity>
+        <a-entity id="update11" position="3.88033 0.09921 3.75776" scale="0.15 0.15 0.15" gltf-model="#ToiletPaper" ></a-entity>
+        <a-entity id="update12" rotation="0 0 -0.6852575229764646" scale="7.52367 10 8.38195" position="-0.66783 3.89832 0.11353" gltf-model="#Roof" ></a-entity>
+        <a-entity id="update13" scale="0.003 0.0025 0.003" position="2.32763 0.79017 -1.25529" gltf-model="#Computer"></a-entity>
+        <a-entity id="update14" rotation="179.99927500270914 -89.85525213698162 -179.9998479605043" scale="0.01 0.015 0.015" position="0.50221 1.56618 -7.1103" gltf-model="#FrontDoor"></a-entity>
+        <a-entity id="update15" rotation="0 89.99333496560814 0" scale="0.01 0.015 0.015" position="-0.03755 1.52566 7.19824" gltf-model="#BackDoor"></a-entity>
+        <a-entity id="update16" scale="1.25 1.25 1.25" rotation="-179.9998479605043 -0.4365938398896873 -179.9998479605043" position="-7.6466 -0.0891 6.7431" gltf-model="#Kitchen"></a-entity>
+        <a-entity id="update17" position="-7.21001 0 2.31568" scale="0.02 0.02 0.02" gltf-model="#Fridge"></a-entity>
+        <a-entity id="update19" rotation="-0.007448451336700701 -85.70073516448801 0.007448451336700701" position="1.56101 1.76885 -2.30296" scale="0.0005 0.0005 0.0005" gltf-model="#LightSwitch"></a-entity>
+        <a-entity id="update20" scale="1.86759 1.73669 1.5" rotation="0 -89.89134847807486 0" position="5.6324 0.06715 4.74053" gltf-model="#Shower"></a-entity>
+        <a-entity id="update21" rotation="0 -86.62548904582917 0" scale="0.6 0.6 0.6" position="3.42469 0.53269 6.58455" gltf-model="#Toilet"></a-entity>
+        <a-entity id="update22" position="33.76766 35.80319 121.39801" scale="0.01 0.01 0.01" gltf-model="#Sun"></a-entity>
+        <a-entity id="update23" position="4.94191 0.09096 -16.98409" scale="0.01 0.01 0.01" gltf-model="#BodyBag"></a-entity>
+        <a-entity id="update33" position="-5.10295 0.25495 -15.72626" scale="0.01 0.01 0.01" gltf-model="#BodyBag"></a-entity>
+        <a-entity id="update34" rotation="0 103.76838627614339 0" position="-7.15958 0.07366 -3.86758" scale="0.05 0.05 0.05" gltf-model="#Speakers"></a-entity>
+        <a-entity id="update26" scale="0.02 0.02 0.02" position="-7.20484 1.16482 4.13291" gltf-model="#Food"></a-entity>
+        <a-entity id="update27" rotation="0 89.07431066221831 0" scale="0.1 0.1 0.1" position="-7.2247 1.0246 4.67344" gltf-model="#Food2"></a-entity>
+        <a-entity id="update28" position="-3.64325 0.45551 -6.21782" scale="0.15 0.15 0.15" gltf-model="#Guitar"></a-entity>
+        <a-entity id="update30" rotation="-32.84480560587444 0 0" scale="0.015 0.015 0.015" position="-3.20383 0.49283 -3.09603" gltf-model="#FaceMask"></a-entity>
+        <a-entity id="update31"  
+        rotation="0 .065 0" 
+        scale="0.03 0.03 0.03" 
+        position="-4.62619 0.07915 -0.63629"
+        animation="dur: 5000; easing: linear; from: -4.62 0.079 -.636; loop: -1; to: -4.62 0.079 5; property: position; autoplay: true"
+        gltf-model="#Cat"></a-entity>
+        <a-entity id="update32" rotation="-95.09265934227247 0 0" scale="0.001 0.001 0.001" position="2.78319 0 -4.55547" gltf-model="#Controller"></a-entity>
+
+        <a-box color="grey" position="1.57887 1.45186 0.3431" scale= "0.0267 0.12191 0.08593" onclick="NonCovid()"> </a-box>
+        
+
+
+       </a-entity>
 
 
 
+
+        <a-entity id="NonCovid" visible="false">
+          <a-sky src="#farm"></a-sky>
+          <a-box color="black" position= "1.57887 1.45186 0.3431"
+          scale= "0.0267 0.12191 0.08593" onclick="Covid()" static-body class="intersectable"></a-box>
+          <a-light id="ambient1" type="ambient" color="#4f6487" ></a-light>
+
+        <a-entity id="update2" scale="1.45 1.45 1.45" position="-0.73928 0.01707 0" gltf-model="#apartment"></a-entity>
+        <a-entity id="update3" rotation="176.40224596487786 0.5563420190720294 -179.2773481808443" scale="0.035 0.035 0.035" position="4.73131 0.08593 1.93835" gltf-model="#bed"></a-entity>
+        <a-entity id="update4" position="-4.39669 -0.00891 -4.86496"  gltf-model="#sofa" scale="0.035 0.035 0.035"></a-entity>
+        <a-entity id="update7" scale="4 2 2" position="4.33188 0 -6.11283" gltf-model="#BedroomDesk" ></a-entity>
+        <a-entity id="update8" scale=".001 .001 .001" position="5.48517 1.03338 -6.11283" gltf-model="#Xbox" ></a-entity>
+        <a-entity id="update9" rotation="0 -85.86517405169056 0" position="3.34147 -0.05246 -0.73293" scale="0.0025 0.002 0.002" gltf-model="#GamingChair" ></a-entity>
+        <a-entity id="update12" scale="7.52367 10 8.38195" position="-0.66783 3.89832 0.11353" gltf-model="#Roof" ></a-entity>
+        <a-entity id="update13" scale="0.003 0.0025 0.003" position="2.25987 0.71204 -1.25529" gltf-model="#Computer"></a-entity>
+        <a-entity id="update14" rotation="179.99927500270914 -89.85525213698162 -179.9998479605043" scale="0.01 0.015 0.015" position="0.50221 1.56618 -7.1103" gltf-model="#FrontDoor"></a-entity>
+        <a-entity id="update15" rotation="0 89.99333496560814 0" scale="0.01 0.015 0.015" position="-0.03755 1.52566 7.19824" gltf-model="#BackDoor"></a-entity>
+        <a-entity id="update16" scale="1.25 1.25 1.25" rotation="-179.9998479605043 -0.4365938398896873 -179.9998479605043" position="-7.6466 -0.0891 6.7431" gltf-model="#Kitchen"></a-entity>
+        <a-entity id="update17" position="-7.21001 0 2.31568" scale="0.02 0.02 0.02" gltf-model="#Fridge"></a-entity>
+        <a-entity id="update19" rotation="-0.007448451336700701 -85.70073516448801 0.007448451336700701" position="1.56101 1.76885 -2.30296" scale="0.0005 0.0005 0.0005" gltf-model="#LightSwitch"></a-entity>
+        <a-entity id="update20" scale="1.86759 1.73669 1.5" rotation="0 -89.89134847807486 0" position="5.6324 0.06715 4.74053" gltf-model="#Shower"></a-entity>
+        <a-entity id="update21" rotation="0 -86.62548904582917 0" scale="0.6 0.6 0.6" position="3.42469 0.53269 6.58455" gltf-model="#Toilet"></a-entity>
+        <a-entity id="update22" position="33.76766 35.80319 121.39801" scale="0.01 0.01 0.01" gltf-model="#Sun"></a-entity>
+        <a-entity id="update36" rotation="0 103.76838627614339 0" position="-7.15958 0.07366 -3.86758" scale="0.05 0.05 0.05" gltf-model="#SpeakersNoCovid"></a-entity>
+        <a-entity id="update23" rotation="15.091708323745886 90.87683588569988 1.6839229598894894" position="-7.54635 2.62159 -4.12496" gltf-model="#NoCovidTV" scale="0.045 0.045 0.045"></a-entity>
+        <a-entity id="update24" position="4.18587 1.73413 -5.97007" gltf-model="#NoCovidBedroomTV" ></a-entity>
+        <a-entity id="update25" position="2.69426 0.01144 0" gltf-model="#DesktopNoCovid"></a-entity>
+        <a-entity id="update29" rotation="175.99315409915445 -66.12563209384344 -162.20435180153606" position="-4.44357 0.00212 -11.32391" scale="0.006 0.006 0.006" gltf-model="#Motorcycle"></a-entity>
+
+        
+
+  </a-box>
+
+      </a-entity>
+    
+
+
+
+        <script type="text/javascript"> 
+          function Covid() {
+            document.getElementById('Covid').setAttribute('visible', 'true')
+            document.getElementById('NonCovid').setAttribute('visible', 'false')
+          }
+
+          function NonCovid() {
+        document.getElementById('NonCovid').setAttribute('visible', 'true')
+        document.getElementById('Covid').setAttribute('visible', 'false')
+  }
+        </script> 
+
+<!--Function levels of light when clicked -->
+<script>
+  function fourLevelLight() {
+      var light = document.querySelector('#light');
+      var current_intensity = light.getAttribute('intensity');
+
+      if (current_intensity == 1)
+          light.setAttribute('intensity', .5);
+      else if (current_intensity == .5)
+          light.setAttribute('intensity', 0);
+      else if (current_intensity == 0)
+          light.setAttribute('intensity', 2);
+      else
+          light.setAttribute('intensity', 1);
+  }
+
+</script>
+
+<script>
+
+AFRAME.registerComponent('audiohandler', {
+  init:function() {
+     let playing = false;
+     let audio = document.querySelector("#audio");
+     this.el.addEventListener('click', () => {
+          if(!playing) {
+              audio.play();
+           } else {
+              audio.pause();
+              audio.currentTime = 0;
+           }
+           playing = !playing;
+     });
+  }
+})
+
+</script> 
 
     </a-scene>
     
