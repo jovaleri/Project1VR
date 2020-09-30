@@ -19,18 +19,18 @@
     <a-scene physics="debug: true" cursor="rayOrigin:mouse">
 
       
-      <a-entity kinetic-body camera look-controls wasd-controls="acceleration:65" universal-controls position="-.48 1.606 -0.104" rotation="-1.476 270 0"  camera="userHeight: 1.6">
+      <a-entity  camera look-controls wasd-controls="acceleration:65" universal-controls position="-.48 1.606 -0.104" rotation="-1.476 270 0" kinematic-body camera="userHeight: 1.6">
         <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
             radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat"
                   position="0 0 -0.75"></a-entity>
-                </a-entity>
+                   </a-entity>
 
       <a-sky color="#ECECEC"></a-sky>
       <a-plane static-body position="0 -0.05455 0" rotation="-90.18011920682079 0 0" scale="60 60 60"></a-plane>
-      <a-box   position="-0.88156 0.32195 -7.30361" rotation="0 179.5334603152678 0" scale="15.0302 1.10375 0.10262" static-body></a-box>
-      <a-box   position="-7.79705 0.32195 -0.30021" rotation="0 90.00307524812537 0" scale= "14.64794 1.10375 0.10262" static-body></a-box>
-      <a-box   position="6.431 0.32195 -0.02086" rotation="0 -89.99734567017407 0" scale="14.5396 1.10375 0.10262" static-body></a-box>
-      <a-box   position= "-0.70328 0.32195 7.3342" rotation:= "0 179.95573021027923 0" scale= "14.64794 1.10375 0.10262" static-body></a-box>
+      <a-box static-body  position="-0.88156 0.32195 -7.30361" rotation="0 179.5334603152678 0" scale="15.0302 1.10375 0.10262" ></a-box>
+      <a-box  static-body position="-7.79705 0.32195 -0.30021" rotation="0 90.00307524812537 0" scale= "14.64794 1.10375 0.10262"></a-box>
+      <a-box  static-body position="6.431 0.32195 -0.02086" rotation="0 -89.99734567017407 0" scale="14.5396 1.10375 0.10262"></a-box>
+      <a-box  static-body position= "-0.70328 0.32195 7.3342" rotation:= "0 179.95573021027923 0" scale= "14.64794 1.10375 0.10262"></a-box>
 
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
