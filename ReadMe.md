@@ -129,6 +129,8 @@ For a A, you need to:
 * ToiletPaper
 * Xbox
 
+**A majority of the models are taken from Sketchfab**
+
 ## Audios Used 
 
 :one:[Purge Audio](https://www.youtube.com/watch?v=us_0aLWOa8E)
