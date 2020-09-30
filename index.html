@@ -15,7 +15,7 @@
   <body>
 
    
-  
+    <!--Enables physics in the world created & also enables the mouse to be used to click to enable features-->
     <a-scene physics="debug: true" cursor="rayOrigin:mouse">
 
       
@@ -25,6 +25,7 @@
                   position="0 0 -0.75"></a-entity>
                    </a-entity>
 
+      <!--creates the sky color, and the walls outside the house so the camera wont pass through the walls easily and also won't fall off the map-->             
       <a-sky color="#ECECEC"></a-sky>
       <a-plane static-body position="0 -0.05455 0" rotation="-90.18011920682079 0 0" scale="60 60 60"></a-plane>
       <a-box static-body  position="-0.88156 0.32195 -7.30361" rotation="0 179.5334603152678 0" scale="15.0302 1.10375 0.10262" ></a-box>
@@ -32,12 +33,13 @@
       <a-box  static-body position="6.431 0.32195 -0.02086" rotation="0 -89.99734567017407 0" scale="14.5396 1.10375 0.10262"></a-box>
       <a-box  static-body position= "-0.70328 0.32195 7.3342" rotation:= "0 179.95573021027923 0" scale= "14.64794 1.10375 0.10262"></a-box>
 
+      <!--The outside world wiht the forest and grasses-->
       <a-entity environment="preset: forest; groundColor: #445; grid: cross"></a-entity>
 
     <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
     <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
 
-
+<!---->
     <a-box onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width="15"
       height="21" depth="1" position="1.55038 1.77466 -2.29498" rotation="0 -85.23090977248074 0" scale="0.015 0.015 0.015" 
       static-body class="intersectable">
@@ -131,8 +133,6 @@
         animation="dur: 5000; easing: linear; from: -4.62 0.079 -.636; loop: -1; to: -4.62 0.079 5; property: position; autoplay: true"
         gltf-model="#Cat"></a-entity>
         <a-entity id="update32" rotation="-95.09265934227247 0 0" scale="0.001 0.001 0.001" position="2.78319 0 -4.55547" gltf-model="#Controller"></a-entity>
-
-        <a-box color="grey" position="1.57887 1.45186 0.3431" scale= "0.0267 0.12191 0.08593" onclick="NonCovid()"> </a-box>
         
         <a-entity
         text="value:Covid Off; color:#000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/snippet/Snippet.json;"
@@ -144,7 +144,6 @@
 
 
         <a-entity id="NonCovid" visible="false">
-          <a-sky src="#farm"></a-sky>
           <a-box color="black" position= "1.57887 1.45186 0.3431"
           scale= "0.0267 0.12191 0.08593" onclick="Covid()" static-body class="intersectable"></a-box>
           <a-light id="ambient1" type="ambient" color="#4f6487" ></a-light>
@@ -180,9 +179,7 @@
 
       </a-entity>
     
-
-
-
+<!-- Script to switch scenes when pressing the box -->
         <script type="text/javascript"> 
           function Covid() {
             document.getElementById('Covid').setAttribute('visible', 'true')
