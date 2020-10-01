@@ -3,7 +3,7 @@
 # By John Valeriano
 
 Demo link : https://jovaleri.github.io/Project1VR/      
-Video link : https://www.youtube.com/watch?v=y7DYMudcT2c&feature=youtu.be 
+Video link :  
 
 ## Features:
  **Scripts Used** 
