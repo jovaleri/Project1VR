@@ -3,7 +3,7 @@
 # By John Valeriano
 
 Demo link : https://jovaleri.github.io/Project1VR/      
-Video link :  
+Video link :  https://www.youtube.com/watch?v=lgpGrvvBego
 
 ## Features:
  **Scripts Used** 
@@ -76,25 +76,6 @@ Switching Scenes
 ![Music Interaction](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Speakers.jpg)
 
 
-## Grading  
-For a C, you need to:
-* Customize the TTU CS VR showroom into your environment settings with your own style of floor, ceiling, and decorations. You can also start from scratch
-* Have at least unique 10 models (you can get free models online) at appropriate locations in your VR encironment. I don't simply count the number of objects
-* Try your basic environment on a Google Cardboard
-* Have appropriate lighting. Do not give me a complete dark screen.
-
-For a B, you need to:
-* Add an additional 5 unique models (that you build)
-* Give the user control over the lighting: Change the color, brightness, Day/night simulation
-* You should be able to navigate around the space. You can use teleporting if needed.
-* User can select to turn on/of Covid mode by clicking on a button and/or splitting the screen.
-
-For a A, you need to:
-* Add one dynamic object~~
-* Interact with certain objects
-* Interact with certain objects
-
-
 ## Models Used
 * Apartment
 * Bed
@@ -136,5 +117,4 @@ For a A, you need to:
 :one:[Purge Audio](https://www.youtube.com/watch?v=us_0aLWOa8E)
 
 :two:[Blue Monday](https://www.youtube.com/watch?v=FYH8DsU2WCk)
-
 
