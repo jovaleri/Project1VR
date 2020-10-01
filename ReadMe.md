@@ -52,11 +52,11 @@ Video link :
 ```
 
 ## Intro
-![Intro](Project1VR\Project1Gifs\Introduction.gif)
+![Intro](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Introduction.gif)
 
 ## Animation
    
-![Cat](Project1VR\Project1Gifs\Cat_Animation.gif)  
+![Cat](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Cat_Animation.gif)  
 ```
  <a-entity id="update31"  
         rotation="0 .065 0" 
@@ -69,11 +69,11 @@ Video link :
     **Click with the mouse, no need to use the circle to target!**
 
 Switching Scenes
-![Scene Change](Project1VR\Project1Gifs\Switch_Scenes.gif)
+![Scene Change](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Switch_Scenes.gif)
 
-![Light Interaction](Project1VR\Project1Gifs\Light_Interaction.gif)
+![Light Interaction](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Light_Interaction.gif)
 
-![Music Interaction](Project1VR\Project1Gifs\Speakers.jpg)
+![Music Interaction](https://github.com/jovaleri/Project1VR/blob/master/Project1Gifs/Speakers.jpg)
 
 
 ## Grading  
